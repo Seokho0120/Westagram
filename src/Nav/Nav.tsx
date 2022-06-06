@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BsInstagram } from 'react-icons/bs';
+import { MdOutlineExplore } from 'react-icons/md';
+import { AiOutlineHeart } from 'react-icons/ai';
+import { BsPerson } from 'react-icons/bs';
 
 export default function Nav() {
   return (
@@ -9,10 +12,14 @@ export default function Nav() {
         <NavLogo>
           <BsInstagram />
           <Line />
-          <Name>Westagram</Name>
+          <Title>Westagram</Title>
         </NavLogo>
-        <NavSearch />
-        <NavStatus></NavStatus>
+        <NavSearch type="text" placeholder="검색" id="navbarSearch" />
+        <NavStatus>
+          <MdOutlineExplore className="logo" />
+          <AiOutlineHeart className="logo" />
+          <BsPerson className="logo" />
+        </NavStatus>
       </NavContainer>
     </NavFixed>
   );
@@ -36,8 +43,6 @@ const NavLogo = styled.div`
   align-items: center;
   flex-basis: auto;
   display: flex;
-  flex-basis: 116px;
-  font-size: 22px;
   justify-content: space-between;
 `;
 
@@ -48,10 +53,29 @@ const Line = styled.div`
   margin: 10px;
 `;
 
-const Name = styled.span`
-  /* font-family: 'Billabong', sans-serif; */
+const Title = styled.header`
+  font-size: 22px;
 `;
 
-const NavSearch = styled.input``;
+const NavSearch = styled.input`
+  width: 12%;
+  padding: 2px 0;
+  padding-left: 10px;
+  border-radius: 5px;
+  background-color: rgb(247, 247, 247);
+  border: 1px solid rgb(196, 196, 196);
 
-const NavStatus = styled.div``;
+  &::placeholder {
+    color: rgb(196, 196, 196);
+  }
+`;
+
+const NavStatus = styled.section`
+  display: flex;
+  align-items: center;
+
+  .logo {
+    margin: 0 10px;
+    font-size: 26px;
+  }
+`;
