@@ -1,10 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import MainComments from './MainComments/MainComments';
+import FeedIcons from './FeedIcons/FeedIcons';
+
 import { ImageType } from '../../Type/Interface';
-import { FiHeart } from 'react-icons/fi';
-import { FaRegComment } from 'react-icons/fa';
-import { FiShare } from 'react-icons/fi';
 
 export default function CardFeeds() {
   const [comment, setComment] = useState<string>('');
@@ -37,13 +36,11 @@ export default function CardFeeds() {
     }
   };
 
+  const isVariable = comment.length ? true : false;
+
   return (
     <FeedContainer>
-      <FeedIcons>
-        <FiHeart />
-        <FaRegComment />
-        <FiShare />
-      </FeedIcons>
+      <FeedIcons />
       <FeedCount>
         {countImg.map((item, idx) => {
           return <CountImg src={item.image} alt={item.description} key={idx} />;
@@ -55,9 +52,9 @@ export default function CardFeeds() {
       </FeedText>
       <FeedComments>
         {commentList.map(commentItem => {
-          return <MainComments commentItem={commentItem} />;
+          return <MainComments commentItem={commentItem} key="idx" />;
         })}
-        <li>40분전</li>
+        <li className="TIME">40분전</li>
       </FeedComments>
       <FeedInputContainer>
         <FeedInput
@@ -67,7 +64,11 @@ export default function CardFeeds() {
           value={comment}
           onChange={updateComment}
         />
-        <FeedButton type="button" onClick={addFeedComment}>
+        <FeedButton
+          type="button"
+          onClick={addFeedComment}
+          isVariable={isVariable}
+        >
           게시
         </FeedButton>
       </FeedInputContainer>
@@ -78,21 +79,6 @@ export default function CardFeeds() {
 const FeedContainer = styled.section`
   padding: 10px;
 `;
-
-const FeedIcons = styled.section`
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  font-size: 24px;
-`;
-
-// const FeedIcons = styled.section<{ isChecked: boolean, is: string }>` // 한개 이상의 props는 받아올 수 없기 떄문에 한개 이상 받아올때는 INTERface로 써야함
-//   display: flex;
-//   align-items: center;
-//   gap: 18px;
-//   font-size: 24px;
-//   /* ${({isChecked}) => } */
-// `;
 
 const FeedCount = styled.section`
   display: flex;
@@ -124,6 +110,11 @@ const FeedComments = styled.ul`
   flex-direction: column;
   list-style: none;
   padding: 2px 0;
+
+  .TIME {
+    font-size: 12px;
+    color: gray;
+  }
 `;
 
 const FeedInputContainer = styled.section`
@@ -144,10 +135,11 @@ const FeedInput = styled.input`
   width: 90%;
 `;
 
-const FeedButton = styled.button`
+const FeedButton = styled.button<{ isVariable: boolean }>`
   border: none;
   background-color: white;
-  opacity: 0.5;
   font-size: 12px;
+  font-weight: 500;
   color: rgb(51, 143, 255);
+  opacity: ${props => (props.isVariable ? '1' : '0.5')};
 `;

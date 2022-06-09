@@ -18,7 +18,7 @@ export default function MainCard() {
     <CardContainer>
       <CardUserInfo />
       {cardImg.map((item, idx) => {
-        return <CardImg src={item.image} alt={item.description} key={idx} />;
+        return <img src={item.image} alt={item.description} key={idx} />;
       })}
       <CardFeeds />
     </CardContainer>
@@ -31,11 +31,7 @@ const CardContainer = styled.div`
   justify-content: center;
   margin-top: 100px;
   width: 500px;
-  /* max-width: 700px; */
   background-color: white;
-  /* padding: 16px 0 16px 0; */
 `;
 
-const CardImg = styled.img`
-  /* margin-top: 20px; */
-`;
+// const CardImg = styled.img``;

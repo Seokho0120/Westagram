@@ -1,23 +1,43 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiHeart } from 'react-icons/fi';
+import { FiTrash2 } from 'react-icons/fi';
 
 interface IProps {
   commentItem: string;
 }
 
 export default function MainComments({ commentItem }: IProps) {
-  // export default function MainComments({ commentItem }: { comment: string }) {
-  // export default function MainComments(props: { comment: string }) {
   return (
-    <li>
-      Seokho__lee {commentItem}
-      <FiHeart></FiHeart>
-    </li>
+    <MainComment>
+      <div>
+        <ID>Seokho__lee</ID>
+        <CommentItem>{commentItem}</CommentItem>
+      </div>
+      <StatusIcons>
+        <FiHeart className="HEART" />
+        <FiTrash2 />
+      </StatusIcons>
+    </MainComment>
   );
 }
 
-// 타입이랑 인터페이스 차이
-// 타입 언노운, 보이드, 네버 차이
+const MainComment = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+`;
 
-// 리액트쿼리
+const ID = styled.span`
+  font-weight: 600;
+`;
+
+const CommentItem = styled.span`
+  margin-left: 6px;
+`;
+
+const StatusIcons = styled.div`
+  .HEART {
+    margin-right: 5px;
+  }
+`;
