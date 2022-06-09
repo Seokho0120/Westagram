@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import CardUserInfo from './CardUserInfo/CardUserInfo';
+import CardFeeds from './CardFeeds/CardFeeds';
 import { ImageType } from '../Type/Interface';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { FaRegComment } from 'react-icons/fa';
-import { FiShare } from 'react-icons/fi';
 
 export default function MainCard() {
   const cardImg: ImageType[] = [
@@ -22,7 +20,7 @@ export default function MainCard() {
       {cardImg.map((item, idx) => {
         return <CardImg src={item.image} alt={item.description} key={idx} />;
       })}
-      <CarFeed>zzzz</CarFeed>
+      <CardFeeds />
     </CardContainer>
   );
 }
@@ -32,13 +30,12 @@ const CardContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: 100px;
-  max-width: 700px;
+  width: 500px;
+  /* max-width: 700px; */
   background-color: white;
-  padding: 16px;
+  /* padding: 16px 0 16px 0; */
 `;
 
 const CardImg = styled.img`
-  margin-top: 20px;
+  /* margin-top: 20px; */
 `;
-
-const CarFeed = styled.div``;

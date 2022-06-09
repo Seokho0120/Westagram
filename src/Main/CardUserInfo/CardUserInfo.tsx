@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ImageType } from '../../Type/Interface';
-import { IoEllipsisHorizontalSharp } from 'react-icons/io5';
+import { FaEllipsisH } from 'react-icons/fa';
 
 export default function CardUserInfo() {
   const profileImg: ImageType[] = [
@@ -21,7 +21,7 @@ export default function CardUserInfo() {
         })}
         <Name>Seokho_lee</Name>
       </ProfileContents>
-      <IoEllipsisHorizontalSharp className="logo" />
+      <FaEllipsisH className="logo" />
     </CardProfile>
   );
 }
@@ -30,6 +30,7 @@ const CardProfile = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
   .logo {
     font-size: 28px;
   }
@@ -42,11 +43,11 @@ const ProfileContents = styled.div`
 
 const Profile = styled.img`
   border-radius: 50%;
-  width: 4%;
+  width: 5%;
 `;
 
 const Name = styled.span`
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
   margin-left: 12px;
 `;
