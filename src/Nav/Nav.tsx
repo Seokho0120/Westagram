@@ -35,7 +35,7 @@ const NavContainer = styled.nav`
   justify-content: space-around;
   align-items: center;
   background-color: white;
-  padding: 12px 0;
+  padding: 4px 0;
 `;
 
 const NavLogo = styled.div`
@@ -58,15 +58,14 @@ const Title = styled.header`
 `;
 
 const NavSearch = styled.input`
-  width: 12%;
+  width: 14%;
   padding: 2px 0;
   padding-left: 10px;
   border-radius: 5px;
-  background-color: rgb(247, 247, 247);
-  border: 1px solid rgb(196, 196, 196);
+  background-color: rgb(241, 241, 241);
 
   &::placeholder {
-    color: rgb(196, 196, 196);
+    color: rgb(167, 167, 167);
   }
 `;
 

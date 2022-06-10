@@ -1,31 +1,35 @@
-import React, { useState } from 'react';
+import { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { FiHeart } from 'react-icons/fi';
 import { FaHeart } from 'react-icons/fa';
 import { FiTrash2 } from 'react-icons/fi';
+import { CommentsType } from '../../../Type/Interface';
 
 interface IProps {
-  commentItem: string;
+  commentItem: CommentsType;
+  removeComments: (id: number) => void;
+  // removeComments: Function;
 }
 
-export default function MainComments({ commentItem }: IProps) {
+export default function MainComments({ commentItem, removeComments }: IProps) {
   const [activeHeart, setActiveHeart] = useState<boolean>(false);
 
-  const HeartHandler = () => {
+  const HeartHandler = useCallback(() => {
     setActiveHeart(!activeHeart);
-  };
-
-  console.log(activeHeart);
+  }, [activeHeart]);
 
   return (
     <MainComment>
       <div>
         <ID>Seokho__lee</ID>
-        <CommentItem>{commentItem}</CommentItem>
+        <CommentItem>{commentItem.comments}</CommentItem>
       </div>
       <StatusIcons onClick={HeartHandler}>
         {activeHeart ? <FaHeart className="FaHeart" /> : <FiHeart />}
-        <FiTrash2 />
+        <FiTrash2
+          onClick={() => removeComments(commentItem.id)}
+          className="FiTrash2"
+        />
       </StatusIcons>
     </MainComment>
   );
@@ -47,6 +51,10 @@ const CommentItem = styled.span`
 
 const StatusIcons = styled.div`
   .FaHeart {
-    color: #e3242b;
+    color: #f72119;
+  }
+
+  .FiTrash2 {
+    margin-left: 5px;
   }
 `;

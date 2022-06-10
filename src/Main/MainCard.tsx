@@ -30,8 +30,9 @@ const CardContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: 100px;
-  width: 500px;
+  width: 30%;
   background-color: white;
+  border-radius: 10px;
 `;
 
 // const CardImg = styled.img``;

@@ -59,11 +59,30 @@ const HeartHandler = () => {
     setActiveHeart(!activeHeart);
   };
 
-  좋아요 버튼 로직 어떻게 재사용 가능할지 고민중 -> 커스텀 훅
+  좋아요 버튼 로직 어떻게 재사용 가능할지 고민중 -> 커스텀 훅 알아보기
 ```
 
 ```javascript
+삭제 기능 고민..
 
+const TEST: CommentsType[] = [
+  {
+    id: 1,
+    comments: '댓글 테스트 1',
+  },
+  {
+    id: 2,
+    comments: '댓글 테스트 2',
+  },
+  {
+    id: 3,
+    comments: '댓글 테스트 3',
+  },
+];
+
+{TEST.map((item, idx) => {
+  return <Test key={idx}>{item.comments}</Test>;
+})}
 ```
 
 ```javascript
