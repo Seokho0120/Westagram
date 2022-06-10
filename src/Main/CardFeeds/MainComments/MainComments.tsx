@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiHeart } from 'react-icons/fi';
+import { FaHeart } from 'react-icons/fa';
 import { FiTrash2 } from 'react-icons/fi';
 
 interface IProps {
@@ -8,14 +9,22 @@ interface IProps {
 }
 
 export default function MainComments({ commentItem }: IProps) {
+  const [activeHeart, setActiveHeart] = useState<boolean>(false);
+
+  const HeartHandler = () => {
+    setActiveHeart(!activeHeart);
+  };
+
+  console.log(activeHeart);
+
   return (
     <MainComment>
       <div>
         <ID>Seokho__lee</ID>
         <CommentItem>{commentItem}</CommentItem>
       </div>
-      <StatusIcons>
-        <FiHeart className="HEART" />
+      <StatusIcons onClick={HeartHandler}>
+        {activeHeart ? <FaHeart className="FaHeart" /> : <FiHeart />}
         <FiTrash2 />
       </StatusIcons>
     </MainComment>
@@ -37,7 +46,7 @@ const CommentItem = styled.span`
 `;
 
 const StatusIcons = styled.div`
-  .HEART {
-    margin-right: 5px;
+  .FaHeart {
+    color: #e3242b;
   }
 `;

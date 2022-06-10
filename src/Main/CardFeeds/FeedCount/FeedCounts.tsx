@@ -1,4 +1,3 @@
-import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { ImageType } from '../../../Type/Interface';
 

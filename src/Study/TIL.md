@@ -1,3 +1,5 @@
+### 나중에 lighthouse도 돌려서 이전꺼랑 비교하기
+
 ```javascript
 const FeedIcons = styled.section<{ isChecked: boolean, is: string }>`
   display: flex;
@@ -27,4 +29,47 @@ export default function MainComments({ commentItem }: IProps) {
 
 // 나중에 공부해보기
 // 리액트쿼리
+```
+
+```javascript
+// useCallback 사용
+
+const addFeedComment = useCallback(() => {
+  if (!comment) return;
+  setCommentList([...commentList, comment]);
+  setComment(''); // 엔터 후 input 새로고침
+}, [comment, setComment, commentList, setCommentList]);
+
+// const addFeedComment = () => {
+//   if (!comment) return;
+//   setCommentList([...commentList, comment]);
+//   setComment(''); // 엔터 후 input 새로고침
+// };
+
+const updateComment = useCallback(
+  (e: React.ChangeEvent<HTMLInputElement>) => {
+    setComment(e.target.value);
+  },
+  [setComment]
+);
+```
+
+```javascript
+const HeartHandler = () => {
+    setActiveHeart(!activeHeart);
+  };
+
+  좋아요 버튼 로직 어떻게 재사용 가능할지 고민중 -> 커스텀 훅
+```
+
+```javascript
+
+```
+
+```javascript
+
+```
+
+```javascript
+
 ```

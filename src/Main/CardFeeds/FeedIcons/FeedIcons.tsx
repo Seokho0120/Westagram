@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FiHeart } from 'react-icons/fi';
+import { FaHeart } from 'react-icons/fa';
 import { FaRegComment } from 'react-icons/fa';
 import { FiShare } from 'react-icons/fi';
 

@@ -4,17 +4,15 @@ import MainComments from './MainComments/MainComments';
 import FeedIcons from './FeedIcons/FeedIcons';
 import FeedCounts from './FeedCount/FeedCounts';
 
-import { ImageType } from '../../Type/Interface';
-
 export default function CardFeeds() {
   const [comment, setComment] = useState<string>('');
   const [commentList, setCommentList] = useState<string[]>([]);
 
-  const addFeedComment = () => {
+  const addFeedComment = useCallback(() => {
     if (!comment) return;
     setCommentList([...commentList, comment]);
     setComment(''); // 엔터 후 input 새로고침
-  };
+  }, [comment, setComment, commentList, setCommentList]);
 
   const updateComment = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -72,6 +70,7 @@ const FeedComments = styled.ul`
   padding: 2px 0;
 
   .TIME {
+    margin-top: 8px;
     font-size: 12px;
     color: gray;
   }
