@@ -3,7 +3,7 @@ import axios from 'axios';
 import { IgetData, IResponse } from '../Type/Interface';
 
 const useGetData = (url: IgetData) => {
-  const [response, setResponse] = useState<IResponse[]>();
+  const [data, setData] = useState<IResponse[]>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
 
@@ -12,7 +12,7 @@ const useGetData = (url: IgetData) => {
       try {
         await axios(url)
           .then(res => {
-            setResponse(res.data);
+            setData(res.data);
           })
           .finally(() => {
             setIsLoading(false);
@@ -27,7 +27,7 @@ const useGetData = (url: IgetData) => {
     }
   }, [url]);
 
-  return { response, error, isLoading };
+  return { data, error, isLoading };
 };
 
 export default useGetData;

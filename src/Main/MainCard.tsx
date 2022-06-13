@@ -17,8 +17,10 @@ export default function MainCard() {
   return (
     <CardContainer>
       <CardUserInfo />
-      {cardImg.map((item, idx) => {
-        return <img src={item.image} alt={item.description} key={idx} />;
+      {cardImg.map(cardImg => {
+        return (
+          <img src={cardImg.image} alt={cardImg.description} key={cardImg.id} />
+        );
       })}
       <CardFeeds />
     </CardContainer>

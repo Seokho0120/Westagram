@@ -108,5 +108,8 @@ const [asideMember, setAsideMember] = useState<AsideType[]>([]);
 ```
 
 ```javascript
+계속 이미지 로드가 안됨
+
+import img from '../assets/img.jpg';
 
 ```

@@ -17,9 +17,6 @@ export interface IgetData {
 export interface IResponse {
   id: number;
   image: string;
+  name: string;
   description: string;
-  // first_name: string;
-  // last_name: string;
-  // email: string;
-  // gender: string;
 }

@@ -16,8 +16,14 @@ export default function CardUserInfo() {
   return (
     <CardProfile>
       <ProfileContents>
-        {profileImg.map((item, idx) => {
-          return <Profile src={item.image} alt={item.description} key={idx} />;
+        {profileImg.map(profileImg => {
+          return (
+            <Profile
+              src={profileImg.image}
+              alt={profileImg.description}
+              key={profileImg.id}
+            />
+          );
         })}
         <Name>Seokho_lee</Name>
       </ProfileContents>
