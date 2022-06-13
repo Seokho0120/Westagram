@@ -5,7 +5,7 @@ import FeedIcons from './FeedIcons/FeedIcons';
 import FeedCounts from './FeedCount/FeedCounts';
 import { CommentsType } from '../../Type/Interface';
 
-const TEST: CommentsType[] = [
+export const FIX_COMMENTS: CommentsType[] = [
   {
     id: 1,
     name: 'whitemugwithbaileys',
@@ -23,12 +23,11 @@ const TEST: CommentsType[] = [
   },
 ];
 
-let ids = 4;
+let ids: number = 4;
 
 export default function CardFeeds() {
   const [comment, setComment] = useState<string>('');
-  const [commentList, setCommentList] = useState<CommentsType[]>(TEST);
-  // 댓글에 id 가 들어가있는 형태로 만들기 위해서 list의 State에 객체 넣어줌
+  const [commentList, setCommentList] = useState<CommentsType[]>(FIX_COMMENTS);
 
   const addFeedComment = useCallback(() => {
     if (!comment) return;
@@ -37,12 +36,8 @@ export default function CardFeeds() {
       { id: ids, name: 'Seokho__lee', comments: comment },
     ]);
     ids += 1;
-    setComment(''); // 엔터 후 input 새로고침
+    setComment('');
   }, [comment, setComment, commentList, setCommentList]);
-
-  console.log(commentList);
-  // 처음 로딩 되면 commentList id: 1~3 객체가 있음
-  // addFeedComment 실행되면 id: 4 객체가 추가됨
 
   const updateComment = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -103,8 +98,6 @@ export default function CardFeeds() {
     </>
   );
 }
-
-const Test = styled.li``;
 
 const FeedContainer = styled.section`
   padding: 10px;

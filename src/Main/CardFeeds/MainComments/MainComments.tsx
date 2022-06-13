@@ -1,14 +1,13 @@
 import { useState, useCallback } from 'react';
+import { CommentsType } from '../../../Type/Interface';
 import styled from 'styled-components';
 import { FiHeart } from 'react-icons/fi';
 import { FaHeart } from 'react-icons/fa';
 import { FiTrash2 } from 'react-icons/fi';
-import { CommentsType } from '../../../Type/Interface';
 
 interface IProps {
   commentList: CommentsType;
   removeComments: (id: number) => void;
-  // removeComments: Function;
 }
 
 export default function MainComments({ commentList, removeComments }: IProps) {

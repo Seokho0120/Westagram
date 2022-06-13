@@ -1,18 +1,28 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import useGetData from '../Hooks/useAxios';
 
 export default function Aside() {
-  // const [asideMember, setAsideMember] = useState()
+  const { response, error, isLoading } = useGetData({
+    url: 'http://localhost:3000/data/AsideContents.json',
+  });
 
-  //   useEffect(() => {
-  //     fetch('http://localhost:3000/data/AsideContents.json')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setAsideMember(data);
-  //   }, []);
+  if (isLoading) {
+    return null;
+  }
 
-  return <AsideContainer>하하하</AsideContainer>;
+  if (error) {
+    return <div>Error..</div>;
+  }
+
+  return (
+    <AsideContainer>
+      <MyPropfile>Seokho__lee</MyPropfile>
+      {/* {response?.map((item, idx) => {
+        return <AsideContainer></AsideContainer>;
+      })} */}
+    </AsideContainer>
+  );
 }
 
 const AsideContainer = styled.section`
@@ -24,3 +34,5 @@ const AsideContainer = styled.section`
   margin-top: 100px;
   background-color: white;
 `;
+
+const MyPropfile = styled.section``;

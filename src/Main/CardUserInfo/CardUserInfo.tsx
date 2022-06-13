@@ -43,11 +43,11 @@ const ProfileContents = styled.div`
 
 const Profile = styled.img`
   border-radius: 50%;
-  width: 5%;
+  width: 10%;
 `;
 
 const Name = styled.span`
   font-size: 14px;
   font-weight: 600;
-  margin-left: 12px;
+  margin-left: 10px;
 `;
