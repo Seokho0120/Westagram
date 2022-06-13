@@ -8,17 +8,21 @@ import { CommentsType } from '../../Type/Interface';
 const TEST: CommentsType[] = [
   {
     id: 1,
-    comments: '댓글 테스트 1',
+    name: 'whitemugwithbaileys',
+    comments: '화이팅!',
   },
   {
     id: 2,
-    comments: '댓글 테스트 2',
+    name: 'vm_celeb',
+    comments: '코딩을 즐거웡',
   },
   {
     id: 3,
-    comments: '댓글 테스트 3',
+    name: 'julytwentynineth',
+    comments: '닥코 하세요',
   },
 ];
+
 let ids = 4;
 
 export default function CardFeeds() {
@@ -28,7 +32,10 @@ export default function CardFeeds() {
 
   const addFeedComment = useCallback(() => {
     if (!comment) return;
-    setCommentList([...commentList, { id: ids, comments: comment }]);
+    setCommentList([
+      ...commentList,
+      { id: ids, name: 'Seokho__lee', comments: comment },
+    ]);
     ids += 1;
     setComment(''); // 엔터 후 input 새로고침
   }, [comment, setComment, commentList, setCommentList]);
@@ -65,16 +72,15 @@ export default function CardFeeds() {
         <FeedIcons />
         <FeedCounts />
         <FeedComments>
-          {commentList.map((commentItem, idx) => {
+          {commentList.map((commentList, idx) => {
             return (
               <MainComments
-                commentItem={commentItem}
+                commentList={commentList}
                 removeComments={removeComments}
                 key={idx}
               />
             );
           })}
-
           <li className="TIME">40분전</li>
         </FeedComments>
       </FeedContainer>

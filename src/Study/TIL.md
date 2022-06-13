@@ -83,6 +83,10 @@ const TEST: CommentsType[] = [
 {TEST.map((item, idx) => {
   return <Test key={idx}>{item.comments}</Test>;
 })}
+
+
+댓글 삭제를 하려면 어떻게 해야할까?
+특정 댓글을 인지할 수 있어야 삭제가 가능 -> 각각 id를 부여해 해당 id의 댓글 삭제
 ```
 
 ```javascript

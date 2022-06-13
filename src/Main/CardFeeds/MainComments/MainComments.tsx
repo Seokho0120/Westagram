@@ -6,12 +6,12 @@ import { FiTrash2 } from 'react-icons/fi';
 import { CommentsType } from '../../../Type/Interface';
 
 interface IProps {
-  commentItem: CommentsType;
+  commentList: CommentsType;
   removeComments: (id: number) => void;
   // removeComments: Function;
 }
 
-export default function MainComments({ commentItem, removeComments }: IProps) {
+export default function MainComments({ commentList, removeComments }: IProps) {
   const [activeHeart, setActiveHeart] = useState<boolean>(false);
 
   const HeartHandler = useCallback(() => {
@@ -21,13 +21,13 @@ export default function MainComments({ commentItem, removeComments }: IProps) {
   return (
     <MainComment>
       <div>
-        <ID>Seokho__lee</ID>
-        <CommentItem>{commentItem.comments}</CommentItem>
+        <ID>{commentList.name}</ID>
+        <CommentItem>{commentList.comments}</CommentItem>
       </div>
       <StatusIcons onClick={HeartHandler}>
         {activeHeart ? <FaHeart className="FaHeart" /> : <FiHeart />}
         <FiTrash2
-          onClick={() => removeComments(commentItem.id)}
+          onClick={() => removeComments(commentList.id)}
           className="FiTrash2"
         />
       </StatusIcons>
