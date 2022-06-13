@@ -37,7 +37,7 @@ export default function MainComments({ commentList, removeComments }: IProps) {
 const MainComment = styled.ul`
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 12px;
 `;
 
 const ID = styled.span`

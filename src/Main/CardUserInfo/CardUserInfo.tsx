@@ -36,7 +36,8 @@ const CardProfile = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 8px;
+
   .logo {
     font-size: 28px;
   }
@@ -49,11 +50,11 @@ const ProfileContents = styled.div`
 
 const Profile = styled.img`
   border-radius: 50%;
-  width: 10%;
+  width: 8%;
 `;
 
 const Name = styled.span`
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  margin-left: 10px;
+  margin-left: 8px;
 `;

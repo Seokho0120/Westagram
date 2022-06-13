@@ -111,7 +111,7 @@ const FeedComments = styled.ul`
 
   .TIME {
     margin-top: 8px;
-    font-size: 12px;
+    font-size: 8px;
     color: gray;
   }
 `;
@@ -120,7 +120,7 @@ const FeedInputContainer = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
+  padding: 8px;
   background-color: white;
   border-top: 1px solid rgb(196, 196, 196);
 `;
@@ -129,7 +129,7 @@ const FeedInput = styled.input`
   padding: 0;
   border: none;
   background-color: white;
-  font-size: 12px;
+  font-size: 10px;
   width: 90%;
   :focus {
     outline: none;
@@ -139,7 +139,7 @@ const FeedInput = styled.input`
 const FeedButton = styled.button<{ isVariable: boolean }>`
   border: none;
   background-color: white;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
   color: rgb(51, 143, 255);
   opacity: ${props => (props.isVariable ? '1' : '0.5')};

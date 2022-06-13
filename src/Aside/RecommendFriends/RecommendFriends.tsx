@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
 import useGetData from '../../Hooks/useAxios';
 
-export default function Recommends() {
+export default function RecommendFriends() {
   const { data, error, isLoading } = useGetData({
     url: 'http://localhost:3000/data/AsideContents.json',
   });
@@ -37,7 +36,6 @@ const RecommendContainer = styled.section`
   display: flex;
   align-items: center;
   margin-top: 12px;
-  font-size: 12px;
 `;
 
 const RecommendFriend = styled.div`
@@ -47,20 +45,22 @@ const RecommendFriend = styled.div`
 
 const RecommendProfile = styled.img`
   border-radius: 50%;
-  width: 10%;
+  width: 8%;
 `;
 
 const RecommendText = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 12px;
+  margin-left: 8px;
 `;
 
-const RecommendName = styled.span``;
+const RecommendName = styled.div`
+  font-size: 10px;
+`;
 
-const RecommendDes = styled.span`
-  font-size: 6px;
+const RecommendDes = styled.div`
   color: #949494;
+  font-size: 8px;
 `;
 
 const RecommendFollow = styled.p`

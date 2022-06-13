@@ -25,7 +25,8 @@ const FeedIcon = styled.section`
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 24px;
+  font-size: 16px;
+
   .FaHeart {
     color: #f72119;
   }

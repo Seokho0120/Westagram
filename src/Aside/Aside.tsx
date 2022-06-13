@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ImageType } from '../../src/Type/Interface';
-import Recommends from './Recommends/Recommends';
+import RecommendFriends from './RecommendFriends/RecommendFriends';
 
 export default function Aside() {
   const profileImg: ImageType[] = [
@@ -30,13 +30,13 @@ export default function Aside() {
         <p>회원님을 위한 추천</p>
         <p>모두 보기</p>
       </Recommend>
-      <Recommends />
+      <RecommendFriends />
     </AsideContainer>
   );
 }
 
 const AsideContainer = styled.section`
-  width: 25%;
+  width: 22%;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@ const AsideContainer = styled.section`
 `;
 
 const Name = styled.span`
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   margin-left: 10px;
 `;
@@ -61,12 +61,12 @@ const MyPropfile = styled.section`
 const Recommend = styled.span`
   display: flex;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 8px;
   margin-top: 12px;
   color: #949494;
 `;
 
 const Profile = styled.img`
   border-radius: 60%;
-  width: 12%;
+  width: 8%;
 `;

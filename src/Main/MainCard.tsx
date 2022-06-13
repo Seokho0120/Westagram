@@ -32,7 +32,7 @@ const CardContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: 100px;
-  width: 30%;
+  width: 24%;
   background-color: white;
   border-radius: 10px;
 `;

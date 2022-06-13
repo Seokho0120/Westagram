@@ -54,7 +54,7 @@ const Line = styled.div`
 `;
 
 const Title = styled.header`
-  font-size: 22px;
+  font-size: 16px;
 `;
 
 const NavSearch = styled.input`
@@ -65,6 +65,7 @@ const NavSearch = styled.input`
   background-color: rgb(241, 241, 241);
 
   &::placeholder {
+    font-size: 10px;
     color: rgb(167, 167, 167);
   }
 `;
@@ -75,6 +76,6 @@ const NavStatus = styled.section`
 
   .logo {
     margin: 0 10px;
-    font-size: 26px;
+    font-size: 16px;
   }
 `;

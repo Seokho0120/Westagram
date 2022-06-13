@@ -21,7 +21,7 @@ export default function FeedCounts() {
         <CountText>WestaGram님 외 1,895명이 좋아합니다</CountText>
       </FeedCount>
       <FeedText>
-        <span className="ID">Seokho__lee</span> 취준 그만..
+        <span className="ID">Seokho__lee</span> 취준 멈춰!
       </FeedText>
     </>
   );
@@ -30,7 +30,7 @@ export default function FeedCounts() {
 const FeedCount = styled.section`
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px 0 6px 0;
 `;
 
 const CountImg = styled.img`
@@ -39,13 +39,14 @@ const CountImg = styled.img`
 `;
 
 const CountText = styled.span`
-  padding-left: 8px;
-  font-size: 14px;
+  padding-left: 5px;
+  font-size: 12px;
   font-weight: 500;
 `;
 
 const FeedText = styled.div`
-  font-size: 14px;
+  font-size: 12px;
+  margin-bottom: 4px;
 
   .ID {
     font-weight: 600;
