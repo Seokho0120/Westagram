@@ -26,6 +26,10 @@
 
 JavaScript(ES6) | TypeScript | React | React Router | Styled-component | Axios
 
+## 실행 방법
+
+/View 실행
+
 ## What did I do
 
 ### 타입스크립트 활용

@@ -1,5 +1,4 @@
 {
-  "homepage": "https://seokho0120.github.io/Westagram",
   "name": "westagram",
   "version": "0.1.0",
   "private": true,
@@ -53,5 +52,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.6.2"
-  }
+  },
+  "homepage": "https://seokho0120.github.io/Westagram/"
 }

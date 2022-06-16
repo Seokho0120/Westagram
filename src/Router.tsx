@@ -3,7 +3,7 @@ import View from './View';
 
 const Router = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <Routes>
         <Route path="/View" element={<View />} />
       </Routes>
