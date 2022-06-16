@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Westagram/static/js/main.23b5a8fe.js",
+    "main.js": "/Westagram/static/js/main.ec318173.js",
     "index.html": "/Westagram/index.html",
-    "main.23b5a8fe.js.map": "/Westagram/static/js/main.23b5a8fe.js.map"
+    "main.ec318173.js.map": "/Westagram/static/js/main.ec318173.js.map"
   },
   "entrypoints": [
-    "static/js/main.23b5a8fe.js"
+    "static/js/main.ec318173.js"
   ]
 }
