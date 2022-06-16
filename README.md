@@ -1,16 +1,24 @@
 # Westagram
 
-부트캠프에서 진행했던 Westagram 프로젝트를 리팩토링하는 토이 프로젝트입니다.
+부트캠프에서 진행했던 Westagram 프로젝트를 리팩토링하는 토이 프로젝트 입니다.
 
-기존 JavaScript로 진행한 프로젝트를 새롭게 배운 TypeScript를 활용해 이전에 구현하지 못한 기능을 추가했습니다.
+기존 JavaScript로 진행했던 프로젝트를 새롭게 배운 TypeScript를 활용해 이전에 구현하지 못한 기능을 추가했습니다.
 
 [(이전 프로젝트 링크)](https://github.com/Seokho0120/28-React-Westagram-5.git)
 
 ## 프로젝트의 목표
 
+**TypeScript**를 사용하여 친숙해지려고 노력했으며, 이전 프로젝트에서 구현하지 못했던 **댓글 추가, 삭제 및 좋아요 기능**을 구현했습니다.
+
+최근까지 사용했던 **fetch**가 아닌 현업에서 선호하는 **axios**를 경험하고, **custom hook**을 처음 사용해보며 반복되는 로직의 재사용성을 높였습니다.
+
+최근 관심을 갖고 학습 중인 **성능 최적화**를 위해 **useCallback**과 **useMemo**를 학습 후 **useCallback**을 실제로 사용해 최적화를 구현했습니다.
+
+또한, **media query**와 **가변형 이미지**를 활용해 **반응형 웹**을 구현했습니다.
+
 1. TypeScript 활용
 
-2. 이전 프로젝트에서 구현하지 못했던 기능 구현 (댓글 추가, 삭제 및 좋아요 기능)
+2. 댓글 추가, 삭제 및 좋아요 기능
 
 3. Custom Hook & Axios 사용
 
@@ -28,7 +36,8 @@ JavaScript(ES6) | TypeScript | React | React Router | Styled-component | Axios
 
 ## 실행 방법
 
-/Westagram 실행
+1. npm start
+2. /Westagram 실행
 
 ## What did I do
 
@@ -69,7 +78,7 @@ export interface IResponse {
 
 ### 댓글 추가, 삭제 및 좋아요 기능
 
-- 처음 렌더링 되는 댓글 리스트에 새로운 id의 댓글이 추가됩니다.
+- 처음 렌더링되는 댓글 리스트에 새로운 id의 댓글이 추가됩니다.
 - 댓글의 좋아요 혹은 삭제 클릭 시 id값을 활용해 상태를 변경했습니다.
 
 ![위스타그램 댓글 추가 좋아요 삭제](https://user-images.githubusercontent.com/93597794/174042528-5f0ed22b-97b8-4f15-a782-5405de9f4fc8.gif)
@@ -124,7 +133,7 @@ export default useGetData;
 
 ![위스타그램 반응형](https://user-images.githubusercontent.com/93597794/174042546-a97fd515-86d9-4832-a51e-313fcf124441.gif)
 
-### 성능 최적화 (useCallback 활용)
+### 성능 최적화
 
 - useCallback과 useMemo를 학습 후 useCallback을 사용해 최적화 구현했습니다.
 

@@ -98,6 +98,8 @@ const TEST: CommentsType[] = [
 
 댓글 삭제를 하려면 어떻게 해야할까?
 특정 댓글을 인지할 수 있어야 삭제가 가능 -> 각각 id를 부여해 해당 id의 댓글 삭제
+
+https://velog.io/@eunjin/React-Project-Instagram-Clone-Project-%EC%9D%B8%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8-%ED%81%B4%EB%A1%A0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8
 ```
 
 ```javascript
