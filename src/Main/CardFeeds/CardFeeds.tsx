@@ -1,9 +1,9 @@
 import { useState, useCallback } from 'react';
-import styled from 'styled-components';
 import MainComments from './MainComments/MainComments';
+import { CommentsType } from '../../Type/Interface';
+import styled from 'styled-components';
 import FeedIcons from './FeedIcons/FeedIcons';
 import FeedCounts from './FeedCount/FeedCounts';
-import { CommentsType } from '../../Type/Interface';
 
 export const FIX_COMMENTS: CommentsType[] = [
   {
@@ -67,12 +67,12 @@ export default function CardFeeds() {
         <FeedIcons />
         <FeedCounts />
         <FeedComments>
-          {commentList.map((commentList, idx) => {
+          {commentList.map(commentList => {
             return (
               <MainComments
                 commentList={commentList}
                 removeComments={removeComments}
-                key={idx}
+                key={commentList.id}
               />
             );
           })}

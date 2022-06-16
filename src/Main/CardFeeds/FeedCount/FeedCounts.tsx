@@ -14,8 +14,10 @@ export default function FeedCounts() {
   return (
     <>
       <FeedCount>
-        {countImg.map((item, idx) => {
-          return <CountImg src={item.image} alt={item.description} key={idx} />;
+        {countImg.map(item => {
+          return (
+            <CountImg src={item.image} alt={item.description} key={item.id} />
+          );
         })}
 
         <CountText>WestaGram님 외 1,895명이 좋아합니다</CountText>

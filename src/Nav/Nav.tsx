@@ -4,6 +4,7 @@ import { BsInstagram } from 'react-icons/bs';
 import { MdOutlineExplore } from 'react-icons/md';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 export default function Nav() {
   return (
@@ -20,6 +21,7 @@ export default function Nav() {
           <AiOutlineHeart className="logo" />
           <BsPerson className="logo" />
         </NavStatus>
+        <GiHamburgerMenu className="GiHamburgerMenu" />
       </NavContainer>
     </NavFixed>
   );
@@ -36,6 +38,16 @@ const NavContainer = styled.nav`
   align-items: center;
   background-color: white;
   padding: 4px 0;
+
+  .GiHamburgerMenu {
+    display: none;
+  }
+
+  @media screen and (max-width: 860px) {
+    .GiHamburgerMenu {
+      display: block;
+    }
+  }
 `;
 
 const NavLogo = styled.div`
@@ -44,6 +56,10 @@ const NavLogo = styled.div`
   flex-basis: auto;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 860px) {
+    font-size: 30px;
+  }
 `;
 
 const Line = styled.div`
@@ -68,6 +84,10 @@ const NavSearch = styled.input`
     font-size: 10px;
     color: rgb(167, 167, 167);
   }
+
+  @media screen and (max-width: 860px) {
+    display: none;
+  }
 `;
 
 const NavStatus = styled.section`
@@ -75,7 +95,11 @@ const NavStatus = styled.section`
   align-items: center;
 
   .logo {
-    margin: 0 10px;
-    font-size: 16px;
+    margin: 0 6px;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 860px) {
+    display: none;
   }
 `;

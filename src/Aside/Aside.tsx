@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { ImageType } from '../../src/Type/Interface';
 import RecommendFriends from './RecommendFriends/RecommendFriends';
+import { IoIosArrowDown } from 'react-icons/io';
+import { useState } from 'react';
 
 export default function Aside() {
   const profileImg: ImageType[] = [
@@ -30,6 +32,9 @@ export default function Aside() {
         <p>회원님을 위한 추천</p>
         <p>모두 보기</p>
       </Recommend>
+      <DownArrow>
+        <IoIosArrowDown />
+      </DownArrow>
       <RecommendFriends />
     </AsideContainer>
   );
@@ -45,6 +50,10 @@ const AsideContainer = styled.section`
   padding: 10px;
   background-color: white;
   border-radius: 10px;
+
+  @media screen and (max-width: 860px) {
+    width: 22%;
+  }
 `;
 
 const Name = styled.span`
@@ -64,6 +73,22 @@ const Recommend = styled.span`
   font-size: 8px;
   margin-top: 12px;
   color: #949494;
+`;
+
+const DownArrow = styled.section`
+  display: none;
+
+  @media screen and (max-width: 860px) {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border-top: 1px solid #efefef;
+    padding-top: 8px;
+
+    :hover {
+      color: rgb(51, 143, 255);
+    }
+  }
 `;
 
 const Profile = styled.img`

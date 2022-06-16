@@ -36,6 +36,10 @@ const RecommendContainer = styled.section`
   display: flex;
   align-items: center;
   margin-top: 12px;
+
+  @media screen and (max-width: 860px) {
+    display: none;
+  }
 `;
 
 const RecommendFriend = styled.div`

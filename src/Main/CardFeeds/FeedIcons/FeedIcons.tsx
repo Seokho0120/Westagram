@@ -13,8 +13,10 @@ export default function FeedIcons() {
   }, [activeHeart]);
 
   return (
-    <FeedIcon onClick={HeartHandler}>
-      {activeHeart ? <FaHeart className="FaHeart" /> : <FiHeart />}
+    <FeedIcon>
+      <HertHandle onClick={HeartHandler}>
+        {activeHeart ? <FaHeart className="FaHeart" /> : <FiHeart />}
+      </HertHandle>
       <FaRegComment />
       <FiShare />
     </FeedIcon>
@@ -30,4 +32,9 @@ const FeedIcon = styled.section`
   .FaHeart {
     color: #f72119;
   }
+`;
+
+const HertHandle = styled.div`
+  display: flex;
+  align-items: center;
 `;

@@ -1,5 +1,16 @@
 ### 나중에 lighthouse도 돌려서 이전꺼랑 비교하기
 
+이전 프로젝트 리팩토링 및 개선
+
+타입스크립트 사용
+axios와 커스텀훅 사용
+usecallback 사용 -> 개선
+댓글 삭제 및 좋아요 기능
+
+- 나중에
+- 반응형 미디어쿼리
+- 페이지네이션
+
 ```javascript
 const FeedIcons = styled.section<{ isChecked: boolean, is: string }>`
   display: flex;
@@ -112,4 +123,16 @@ const [asideMember, setAsideMember] = useState<AsideType[]>([]);
 
 import img from '../assets/img.jpg';
 
+```
+
+```javascript
+// axios
+https://naon.me/posts/til114
+https://www.notion.so/axios-c69b7cba7ca54efd847d2e3bd041ef1c
+
+// mock data
+https://www.notion.so/wecode/React-Mock-Data-c19fbb1a07c14f049c120ec818e847ee
+
+// css
+https://shlrur.github.io/develog/2019/01/23/how-arrange-elements-horizontally-flexbox/
 ```
