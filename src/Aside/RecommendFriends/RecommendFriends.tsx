@@ -18,7 +18,11 @@ export default function RecommendFriends() {
         return (
           <RecommendContainer>
             <RecommendFriend>
-              <RecommendProfile src={rec.image} key={rec.id} />
+              <RecommendProfile
+                src={rec.image}
+                key={rec.id}
+                alt={rec.description}
+              />
               <RecommendText>
                 <RecommendName>{rec.name}</RecommendName>
                 <RecommendDes>{rec.description}</RecommendDes>

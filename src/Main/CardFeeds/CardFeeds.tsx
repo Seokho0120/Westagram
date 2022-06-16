@@ -1,27 +1,10 @@
 import { useState, useCallback } from 'react';
 import MainComments from './MainComments/MainComments';
+import { FIX_COMMENTS } from '../../Data/FixCommnet';
 import { CommentsType } from '../../Type/Interface';
 import styled from 'styled-components';
 import FeedIcons from './FeedIcons/FeedIcons';
 import FeedCounts from './FeedCount/FeedCounts';
-
-export const FIX_COMMENTS: CommentsType[] = [
-  {
-    id: 1,
-    name: 'whitemugwithbaileys',
-    comments: '화이팅!',
-  },
-  {
-    id: 2,
-    name: 'vm_celeb',
-    comments: '코딩을 즐거웡',
-  },
-  {
-    id: 3,
-    name: 'julytwentynineth',
-    comments: '닥코 하세요',
-  },
-];
 
 let ids: number = 4;
 
@@ -57,9 +40,12 @@ export default function CardFeeds() {
 
   const isVariable = comment.length ? true : false;
 
-  const removeComments = (id: number) => {
-    setCommentList(commentList.filter(comments => comments.id !== id));
-  };
+  const removeComments = useCallback(
+    (id: number) => {
+      setCommentList(commentList.filter(comments => comments.id !== id));
+    },
+    [commentList]
+  );
 
   return (
     <>
