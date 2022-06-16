@@ -105,7 +105,6 @@ fetch 쓰려다가 더 장점이 있는 axios를 사용함
 사용 방법은 사실 비슷해서 커스텀훅을 만들어봄
 커스텀훅 작성하며 예외처리
 
-
 // https://webclub.tistory.com/71 - 예외처리
 // 이전 코드
 const [asideMember, setAsideMember] = useState<AsideType[]>([]);
@@ -122,7 +121,6 @@ const [asideMember, setAsideMember] = useState<AsideType[]>([]);
 계속 이미지 로드가 안됨
 
 import img from '../assets/img.jpg';
-
 ```
 
 ```javascript

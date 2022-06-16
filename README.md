@@ -8,17 +8,15 @@
 
 ## 프로젝트의 목표
 
-1. 타입스크립트 활용
+1. TypeScript 활용
 
-2. 이전 프로젝트에서 구현하지 못했던 기능 구현(댓글 추가 및 삭제, 게시글 좋아요 기능)
+2. 이전 프로젝트에서 구현하지 못했던 기능 구현 (댓글 추가, 삭제 및 좋아요 기능)
 
-3. 커스텀 훅 사용
+3. Custom Hook & Axios 사용
 
-4. axios 사용
+4. 반응형 구현 (Media Query 및 가변형 이미지)
 
-5. 반응형 구현
-
-6. 성능 최적화
+5. 성능 최적화 (useCallback, useMemo)
 
 ## 작업 기간
 
@@ -32,21 +30,133 @@ JavaScript(ES6) | TypeScript | React | React Router | Styled-component | Axios
 
 ### 타입스크립트 활용
 
-- type과 interface 차이점 학습 후 interface 활용
-- 타입
+- TypeScript 기초 학습 후 프로젝트를 진행했습니다. [(학습 기록 링크)](https://github.com/Seokho0120/TypeScript_Study.git)
+- Type와 Interface의 공통점 및 차이점을 학습 후 Interface를 주로 사용했습니다.
+- Interface 관심사 분리를 통해 효율적으로 Type을 관리했습니다.
 
-### 댓글 추가 및 삭제
+<img width="198" alt="스크린샷 2022-06-16 오후 6 33 01" src="https://user-images.githubusercontent.com/93597794/174040641-54daedc4-8e5a-4b5f-b01d-794192b1e277.png">
 
-- ㅇㅇㅇ
+```javascript
+// Interface.tsx
 
-### axios & custom Hook 활용
+export interface ImageType {
+  id: number;
+  image: string;
+  description: string;
+}
 
-- ㅇㅇㅇ
+export interface CommentsType {
+  id: number;
+  name: string;
+  comments: string;
+}
+
+export interface IgetData {
+  url: string;
+}
+
+export interface IResponse {
+  id: number;
+  image: string;
+  name: string;
+  description: string;
+}
+```
+
+### 댓글 추가, 삭제 및 좋아요 기능
+
+- 처음 렌더링 되는 댓글 리스트에 새로운 id의 댓글이 추가됩니다.
+- 댓글의 좋아요 혹은 삭제 클릭 시 id값을 활용해 상태를 변경했습니다.
+
+![위스타그램 댓글 추가 좋아요 삭제](https://user-images.githubusercontent.com/93597794/174042528-5f0ed22b-97b8-4f15-a782-5405de9f4fc8.gif)
+
+### Custom Hook & Axios
+
+- 이전에 사용했던 Fetch와 Axios의 차이점을 학습 후 Axios를 활용했습니다.
+- async / await를 이용해 비동기 통신을 순차적으로 실행했습니다.
+- 프로그램 문제 발생 시 대처를 위한 try / catch 예외 처리를 진행했습니다.
+
+```javascript
+// useAxios.tsx
+
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { IgetData, IResponse } from '../Type/Interface';
+
+const useGetData = (url: IgetData) => {
+  const [data, setData] = useState<IResponse[]>();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await axios(url)
+          .then(res => {
+            setData(res.data);
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+      } catch (err: any) {
+        setError(err);
+        alert(err);
+      }
+    };
+    if (isLoading) {
+      fetchData();
+    }
+  }, [url]);
+
+  return { data, error, isLoading };
+};
+
+export default useGetData;
+```
 
 ### 반응형 구현
 
-- ㅇㅇㅇ
+- 가변형 이미지 및 media query를 활용해 반응형 웹을 구현했습니다.
 
-### 성능 최적화 (useCallBack 활용)
+![위스타그램 반응형](https://user-images.githubusercontent.com/93597794/174042546-a97fd515-86d9-4832-a51e-313fcf124441.gif)
 
-- ㅇㅇㅇ
+### 성능 최적화 (useCallback 활용)
+
+- useCallback과 useMemo를 학습 후 useCallback을 사용해 최적화 구현했습니다.
+
+```javascript
+// MainCard.tsx
+
+const addFeedComment = useCallback(() => {
+  if (!comment) return;
+  setCommentList([
+    ...commentList,
+    { id: ids, name: 'Seokho__lee', comments: comment },
+  ]);
+  ids += 1;
+  setComment('');
+}, [comment, setComment, commentList, setCommentList]);
+
+const updateComment = useCallback(
+  (e: React.ChangeEvent<HTMLInputElement>) => {
+    setComment(e.target.value);
+  },
+  [setComment]
+);
+
+const keyEnter = useCallback(
+  (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      addFeedComment();
+    }
+  },
+  [addFeedComment]
+);
+
+const removeComments = useCallback(
+  (id: number) => {
+    setCommentList(commentList.filter(comments => comments.id !== id));
+  },
+  [commentList]
+);
+```
