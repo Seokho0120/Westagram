@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ImageType } from '../../Type/Interface';
-import { FaEllipsisH } from 'react-icons/fa';
+import { HiDotsHorizontal } from 'react-icons/hi';
 
 export default function CardUserInfo() {
   const profileImg: ImageType[] = [
@@ -16,30 +16,32 @@ export default function CardUserInfo() {
   return (
     <CardProfile>
       <ProfileContents>
-        {profileImg.map(profileImg => {
-          return (
-            <Profile
-              src={profileImg.image}
-              alt={profileImg.description}
-              key={profileImg.id}
-            />
-          );
-        })}
-        <Name>Seokho_lee</Name>
+        <>
+          {profileImg.map(profileImg => {
+            return (
+              <Profile
+                src={profileImg.image}
+                alt={profileImg.description}
+                key={profileImg.id}
+              />
+            );
+          })}
+          <Name>Seokho_lee</Name>
+        </>
+        <HiDotsHorizontal className="logo" />
       </ProfileContents>
-      <FaEllipsisH className="logo" />
     </CardProfile>
   );
 }
 
 const CardProfile = styled.section`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 8px;
 
   .logo {
-    font-size: 28px;
+    font-size: 16px;
+    margin-left: auto;
   }
 `;
 
