@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import View from './View';
 
 const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/View" element={<View />} />
+        <Route path="/Westagram" element={<View />} />
       </Routes>
     </BrowserRouter>
   );
