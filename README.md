@@ -92,6 +92,7 @@ export interface IResponse {
 - 이전에 사용했던 Fetch와 Axios의 차이점을 학습 후 Axios를 활용했습니다.
 - async / await를 이용해 비동기 통신을 순차적으로 실행했습니다.
 - 프로그램 문제 발생 시 대처를 위한 try / catch 예외 처리를 진행했습니다.
+- Custom Hooks을 사용해 로직의 반복을 최소화하고 재사용성을 높였습니다.
 
 ```javascript
 // useAxios.tsx
