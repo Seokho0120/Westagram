@@ -6,6 +6,10 @@
 
 [(이전 프로젝트 링크)](https://github.com/Seokho0120/28-React-Westagram-5.git)
 
+## Link
+
+[(Github)](https://github.com/Seokho0120/Westagram.git) | [(프로젝트 회고)](https://velog.io/@leesegho/Westagram)
+
 ## 프로젝트의 목표
 
 **TypeScript**와 친숙해지려고 노력했으며, 이전 프로젝트에서 구현하지 못했던 **댓글 추가, 삭제 및 좋아요 기능**을 구현했습니다.
