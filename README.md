@@ -2,11 +2,13 @@
 
 부트캠프에서 진행했던 Westagram 프로젝트를 리팩토링하는 토이 프로젝트 입니다.
 
-기존 JavaScript로 진행했던 프로젝트를 새롭게 배운 TypeScript를 활용해 이전에 구현하지 못한 기능을 추가했습니다.[(이전 프로젝트 링크)](https://github.com/Seokho0120/28-React-Westagram-5.git)
+기존 JavaScript로 진행했던 프로젝트를 새롭게 배운 TypeScript를 활용해 이전에 구현하지 못한 기능을 추가했습니다.
+
+[(이전 프로젝트 링크)](https://github.com/Seokho0120/28-React-Westagram-5.git)
 
 ## Link
 
-[Github](https://github.com/Seokho0120/Westagram.git) | [프로젝트 회고](https://velog.io/@leesegho/Westagram)
+[Github](https://github.com/Seokho0120/Westagram.git) | [프로젝트 회고](https://velog.io/@leesegho/Westagram) (후기 및 문제 해결 내용을 참고해주세요.)
 
 ## 프로젝트의 목표
 
