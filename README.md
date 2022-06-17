@@ -2,13 +2,11 @@
 
 부트캠프에서 진행했던 Westagram 프로젝트를 리팩토링하는 토이 프로젝트 입니다.
 
-기존 JavaScript로 진행했던 프로젝트를 새롭게 배운 TypeScript를 활용해 이전에 구현하지 못한 기능을 추가했습니다.
-
-[(이전 프로젝트 링크)](https://github.com/Seokho0120/28-React-Westagram-5.git)
+기존 JavaScript로 진행했던 프로젝트를 새롭게 배운 TypeScript를 활용해 이전에 구현하지 못한 기능을 추가했습니다.[(이전 프로젝트 링크)](https://github.com/Seokho0120/28-React-Westagram-5.git)
 
 ## Link
 
-[(Github)](https://github.com/Seokho0120/Westagram.git) | [(프로젝트 회고)](https://velog.io/@leesegho/Westagram)
+[Github](https://github.com/Seokho0120/Westagram.git) | [프로젝트 회고](https://velog.io/@leesegho/Westagram)
 
 ## 프로젝트의 목표
 
@@ -177,3 +175,9 @@ const removeComments = useCallback(
   [commentList]
 );
 ```
+
+## 구현 결과
+
+댓글 게시물을 추가 및 삭제할 수 있으며, 댓글과 게시물에 좋아요를 할 수 있습니다. 반응형 웹으로 구현되어 다양한 디바이스에 대응할 수 있습니다.
+
+![](https://velog.velcdn.com/images/leesegho/post/ecc7dad4-b33a-4efb-aaf8-d8309d3da329/image.gif)
