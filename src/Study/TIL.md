@@ -5,6 +5,8 @@
 - 스타일컴포넌트 사용 시 타스
 - props 전달 시 타스
 
+https://keeper.tistory.com/49 타스 리액트 링크
+
 2. useCallback & useMemo
 
 - 사용 이유, 방법, 언제 사용?
